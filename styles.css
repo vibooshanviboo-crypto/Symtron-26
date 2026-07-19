@@ -1,0 +1,80 @@
+:root {
+  --background: oklch(14% 0.01 40);
+  --foreground: oklch(98% 0.01 80);
+  --card: oklch(18% 0.012 40);
+  --card-foreground: oklch(98% 0.01 80);
+  --popover: oklch(18% 0.012 40);
+  --popover-foreground: oklch(98% 0.01 80);
+  --primary: oklch(72% 0.19 45);
+  --primary-foreground: oklch(12% 0.02 40);
+  --secondary: oklch(22% 0.015 50);
+  --secondary-foreground: oklch(98% 0.01 80);
+  --muted: oklch(22% 0.01 50);
+  --muted-foreground: oklch(72% 0.02 60);
+  --accent: oklch(72% 0.19 45);
+  --accent-foreground: oklch(12% 0.02 40);
+  --destructive: oklch(50% 0.2 20);
+  --destructive-foreground: oklch(98% 0 0);
+  --border: oklch(28% 0.02 50);
+  --input: oklch(24% 0.015 50);
+  --ring: oklch(72% 0.19 45);
+  --radius: 0.5rem;
+
+  /* Custom Gradients */
+  --gradient-hero:
+    radial-gradient(1200px 600px at 80% -10%,
+      oklch(72% 0.19 45/0.25),
+      transparent 60%),
+    radial-gradient(900px 500px at -10% 20%,
+      oklch(55% 0.15 30/0.18),
+      transparent 60%),
+    linear-gradient(180deg, oklch(10% 0.01 40), oklch(14% 0.01 40));
+  --gradient-primary: linear-gradient(135deg,
+      oklch(72% 0.19 45),
+      oklch(78% 0.19 60));
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px -12px oklch(0% 0 0/0.6);
+  --shadow-glow: 0 20px 60px -20px oklch(72% 0.19 45/0.55);
+
+  /* Fonts */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Impact", sans-serif;
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* Custom background grid styling */
+.bg-grid {
+  background-image:
+    linear-gradient(90deg, oklch(100% 0 0 / 0.04) 1px, transparent 1px),
+    linear-gradient(oklch(100% 0 0 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Custom text gradient classes */
+.text-gradient {
+  background: var(--gradient-primary);
+  color: transparent !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Set up standard font family helper class mappings */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.font-display {
+  font-family: var(--font-display) !important;
+}
