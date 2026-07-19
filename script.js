@@ -90,7 +90,7 @@ function initApp() {
   // Contact form handler
   const form = document.querySelector('form');
   if (form) {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       alert('Thank you! Your message has been sent successfully. We will get back to you shortly.');
       form.reset();
