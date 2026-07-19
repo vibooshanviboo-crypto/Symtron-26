@@ -78,6 +78,14 @@
       <div class="absolute inset-0" style="background: var(--gradient-hero)" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
         <div class="mx-auto max-w-4xl text-center">
+          <!-- College & Department Logos (Mobile only) -->
+          <div class="flex items-center justify-center gap-6 mb-6 md:hidden">
+            <img src="clg-logo.jpg" alt="College Logo" class="w-16 h-16 object-contain"
+              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
+            <img src="dep-logo.jpg" alt="Department Logo" class="w-16 h-16 object-contain"
+              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
+          </div>
+
           <div
             class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -93,12 +101,14 @@
             National Level Technical Symposium
           </div>
           <div class="relative inline-block">
-            <!-- clg-logo -->
+            <!-- College Logo (Desktop/Tablet absolute) -->
             <img src="clg-logo.jpg" alt="College Logo"
-              style="position:absolute; top:-90px; left:-5px; width:80px; height:80px; object-fit:contain; filter:drop-shadow(0 0 8px rgba(255,255,255,0.15));" />
-            <!-- dep-logo -->
+              class="hidden md:block absolute left-[-5px] md:w-[70px] md:h-[70px] md:top-[-80px] lg:w-[80px] lg:h-[80px] lg:top-[-90px] object-contain"
+              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
+            <!-- Department Logo (Desktop/Tablet absolute) -->
             <img src="dep-logo.jpg" alt="Department Logo"
-              style="position:absolute; top:-90px; right:-5px; width:80px; height:80px; object-fit:contain; filter:drop-shadow(0 0 8px rgba(255,255,255,0.15));" />
+              class="hidden md:block absolute right-[-5px] md:w-[70px] md:h-[70px] md:top-[-80px] lg:w-[80px] lg:h-[80px] lg:top-[-90px] object-contain"
+              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
             <h1 class="font-display text-6xl leading-[0.95] sm:text-8xl md:text-[10rem]">
               <span class="text-gradient">SYMPTRON</span><span class="text-foreground">&#x27;26</span>
             </h1>
