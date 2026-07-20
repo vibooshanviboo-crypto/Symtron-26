@@ -21,7 +21,7 @@
 
 <body class="bg-background text-foreground antialiased">
   <div class="min-h-screen bg-background text-foreground">
-    <header class="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl"
+    <header class="sticky top-0 z-50 border-b bg-card/95 backdrop-blur-md"
       style="border-bottom: 1px solid oklch(28% 0.02 50 / 0.6)">
       <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <a href="#top" class="flex items-center gap-2">
@@ -94,39 +94,135 @@
         </div>
       </div>
 
-      <!-- Mobile Navigation Dropdown -->
-      <div id="mobile-menu" class="bg-background/95 backdrop-blur-lg border-border md:hidden"
-        style="border-bottom: 0px solid oklch(28% 0.02 50 / 0.6)">
-        <div>
-          <nav class="flex flex-col gap-4 px-6 py-6 border-t border-border">
-            <a href="#about"
-              class="mobile-nav-link text-base font-medium text-muted-foreground transition-colors hover:text-foreground">About</a>
-            <a href="#events"
-              class="mobile-nav-link text-base font-medium text-muted-foreground transition-colors hover:text-foreground">Events</a>
-            <a href="#workshop"
-              class="mobile-nav-link text-base font-medium text-muted-foreground transition-colors hover:text-foreground">Workshop</a>
-            <a href="#schedule"
-              class="mobile-nav-link text-base font-medium text-muted-foreground transition-colors hover:text-foreground">Schedule</a>
-            <a href="#register"
-              class="mobile-nav-link text-base font-medium text-muted-foreground transition-colors hover:text-foreground">Register</a>
-            <a href="#contact"
-              class="mobile-nav-link text-base font-medium text-muted-foreground transition-colors hover:text-foreground">Contact</a>
-            <div class="pt-2">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
-                target="_blank" rel="noopener noreferrer"
-                class="mobile-nav-link flex items-center justify-center gap-1.5 rounded-md bg-[image:var(--gradient-primary)] px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
-                Now
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
-                  <path d="m9 18 6-6-6-6"></path>
-                </svg>
-              </a>
+    </header>
+
+    <!-- Mobile Navigation Sidebar Backdrop -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 z-[60] bg-background/80 backdrop-blur-sm md:hidden"></div>
+
+    <!-- Mobile Navigation Sidebar -->
+    <div id="mobile-menu" class="fixed top-0 right-0 z-[70] h-full w-80 max-w-[calc(100vw-3rem)] translate-x-full bg-card border-l border-border/60 p-6 shadow-2xl transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
+      <div>
+        <!-- Sidebar Header -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-border/40">
+          <div class="flex items-center gap-2">
+            <div class="grid h-9 w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-cpu h-5 w-5" aria-hidden="true">
+                <path d="M12 20v2"></path>
+                <path d="M12 2v2"></path>
+                <path d="M17 20v2"></path>
+                <path d="M17 2v2"></path>
+                <path d="M2 12h2"></path>
+                <path d="M2 17h2"></path>
+                <path d="M2 7h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="M20 17h2"></path>
+                <path d="M20 7h2"></path>
+                <path d="M7 20v2"></path>
+                <path d="M7 2v2"></path>
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+              </svg>
             </div>
-          </nav>
+            <div class="leading-tight">
+              <div class="font-display text-xl tracking-wider">
+                SYMPTRON&#x27;26
+              </div>
+              <div class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                MEC · ECE
+              </div>
+            </div>
+          </div>
+          <!-- Close Button -->
+          <button id="mobile-menu-close"
+            class="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-muted"
+            aria-label="Close mobile menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-5 w-5">
+              <line x1="18" x2="6" y1="6" y2="18"></line>
+              <line x1="6" x2="18" y1="6" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-1">
+          <a href="#about"
+            class="mobile-nav-link group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <span>About</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+          <a href="#events"
+            class="mobile-nav-link group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <span>Events</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+          <a href="#workshop"
+            class="mobile-nav-link group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <span>Workshop</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+          <a href="#schedule"
+            class="mobile-nav-link group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <span>Schedule</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+          <a href="#register"
+            class="mobile-nav-link group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <span>Register</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+          <a href="#contact"
+            class="mobile-nav-link group flex items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+            <span>Contact</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 opacity-0 transition-all -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer (Branding and Quick Actions) -->
+      <div class="mt-auto pt-6 border-t border-border/40 flex flex-col gap-4">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+          target="_blank" rel="noopener noreferrer"
+          class="mobile-nav-link flex items-center justify-center gap-1.5 rounded-md bg-[image:var(--gradient-primary)] px-4 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
+          Now
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </a>
+        <div class="flex items-center justify-center gap-4 text-xs text-muted-foreground">
+          <span>Muthayammal Engineering College</span>
         </div>
       </div>
-    </header>
+    </div>
     <section id="top" class="relative overflow-hidden">
       <div class="absolute inset-0 bg-grid opacity-60"></div>
       <div class="absolute inset-0" style="background: var(--gradient-hero)" aria-hidden="true"></div>
@@ -1045,958 +1141,959 @@
         </div>
       </div>
 
-  </section>
-  <section class="relative overflow-hidden border-y border-border">
-    <div class="absolute inset-0 bg-grid opacity-40"></div>
-    <div class="relative mx-auto max-w-7xl px-6 py-24">
-      <div class="grid items-center gap-12 md:grid-cols-2">
+    </section>
+    <section class="relative overflow-hidden border-y border-border">
+      <div class="absolute inset-0 bg-grid opacity-40"></div>
+      <div class="relative mx-auto max-w-7xl px-6 py-24">
+        <div class="grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+              Theme
+            </div>
+            <h2 class="font-display text-5xl leading-none sm:text-7xl">
+              Engineering <br /><span class="text-gradient">Tomorrow</span><br />Through Innovation
+            </h2>
+            <p class="mt-6 max-w-md text-muted-foreground">
+              SYMPTRON&#x27;26 spotlights the emerging technologies
+              transforming industries and society — encouraging bold ideas,
+              working prototypes and cross-disciplinary collaboration.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Artificial
+              Intelligence</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Embedded
+              Systems</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Internet of
+              Things</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Robotics</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">VLSI
+              Design</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Semiconductor
+              Tech</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Communication
+              Systems</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Renewable
+              Energy</span><span
+              class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Smart
+              Automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-6 py-24">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+          Why Join
+        </div>
+        <h2 class="text-3xl font-semibold sm:text-5xl">
+          Twelve reasons to be at SYMPTRON&#x27;26
+        </h2>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">01</span><span class="text-sm">National-Level
+            Recognition</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">02</span><span class="text-sm">Cash Awards &amp; Prizes</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">03</span><span class="text-sm">Industry Exposure</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">04</span><span class="text-sm">IEEE Environment</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">05</span><span class="text-sm">Hands-on IoT Workshop</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">06</span><span class="text-sm">Research Presentation</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">07</span><span class="text-sm">Networking Opportunities</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">08</span><span class="text-sm">Skill Development</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">09</span><span class="text-sm">Placement Opportunities</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">10</span><span class="text-sm">Innovation Showcase</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">11</span><span class="text-sm">Participation
+            Certificate</span>
+        </div>
+        <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
+          <span class="font-display text-lg text-primary">12</span><span class="text-sm">Fun Non-Technical Events</span>
+        </div>
+      </div>
+    </section>
+    <section id="events" class="border-y border-border bg-card/30">
+      <div class="mx-auto max-w-7xl px-6 py-24">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+            Technical Events
+          </div>
+          <h2 class="text-3xl font-semibold sm:text-5xl">
+            Four flagship contests
+          </h2>
+          <p class="mt-4 text-muted-foreground">
+            Compete across research, projects, code and design — pick one or
+            stack them all.
+          </p>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2">
+          <article
+            class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
+            <div class="flex items-start justify-between gap-4">
+              <div
+                class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-file-text h-6 w-6" aria-hidden="true">
+                  <path
+                    d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z">
+                  </path>
+                  <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                  <path d="M10 9H8"></path>
+                  <path d="M16 13H8"></path>
+                  <path d="M16 17H8"></path>
+                </svg>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-primary">Paper Presentation</span>
+            </div>
+            <h3 class="mt-5 font-display text-3xl tracking-wider">
+              Paper Clash
+            </h3>
+            <p class="mt-2 text-sm text-muted-foreground">
+              Present original research on AI, Embedded, IoT, VLSI, Robotics,
+              Semiconductors, Communication &amp; Renewable Energy.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
+                1–2</span><span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">8
+                min talk</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">2 min
+                Q&amp;A</span>
+            </div>
+          </article>
+          <article
+            class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
+            <div class="flex items-start justify-between gap-4">
+              <div
+                class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-folder-open h-6 w-6" aria-hidden="true">
+                  <path
+                    d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2">
+                  </path>
+                </svg>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-primary">Project Expo</span>
+            </div>
+            <h3 class="mt-5 font-display text-3xl tracking-wider">
+              Project Vault
+            </h3>
+            <p class="mt-2 text-sm text-muted-foreground">
+              Showcase working hardware or software innovations. Judged on
+              innovation, implementation, presentation and social impact.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
+                1–4</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Hardware /
+                Software</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Live demo</span>
+            </div>
+          </article>
+          <article
+            class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
+            <div class="flex items-start justify-between gap-4">
+              <div
+                class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-code-xml h-6 w-6" aria-hidden="true">
+                  <path d="m18 16 4-4-4-4"></path>
+                  <path d="m6 8-4 4 4 4"></path>
+                  <path d="m14.5 4-5 16"></path>
+                </svg>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-primary">Programming</span>
+            </div>
+            <h3 class="mt-5 font-display text-3xl tracking-wider">
+              Code Golf
+            </h3>
+            <p class="mt-2 text-sm text-muted-foreground">
+              Four intense rounds — aptitude, coding, debugging and a final
+              challenge. Languages: C, C++, Python, Java.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Individual</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">4
+                rounds</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Elimination</span>
+            </div>
+          </article>
+          <article
+            class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
+            <div class="flex items-start justify-between gap-4">
+              <div
+                class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-bot h-6 w-6" aria-hidden="true">
+                  <path d="M12 8V4H8"></path>
+                  <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                  <path d="M2 14h2"></path>
+                  <path d="M20 14h2"></path>
+                  <path d="M15 13v2"></path>
+                  <path d="M9 13v2"></path>
+                </svg>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-primary">Design &amp; Simulation</span>
+            </div>
+            <h3 class="mt-5 font-display text-3xl tracking-wider">
+              Robo-CAD
+            </h3>
+            <p class="mt-2 text-sm text-muted-foreground">
+              Design electronic systems end-to-end — circuit design, PCB
+              layout, simulation and optimization using industry tools.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
+                1–2</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Simulation</span><span
+                class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">PCB layout</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="workshop" class="mx-auto max-w-7xl px-6 py-24">
+      <div class="relative overflow-hidden rounded-3xl border border-border bg-card">
+        <div class="absolute inset-0 opacity-40" style="background: var(--gradient-hero)" aria-hidden="true"></div>
+        <div class="relative grid gap-10 p-8 md:grid-cols-5 md:p-14">
+          <div class="md:col-span-2">
+            <div
+              class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] uppercase tracking-widest text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-wrench h-3 w-3" aria-hidden="true">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z">
+                </path>
+              </svg>
+              Hands-on Workshop
+            </div>
+            <h2 class="font-display text-5xl leading-none sm:text-6xl">
+              Embedded Systems <br /><span class="text-gradient">with IoT</span>
+            </h2>
+            <p class="mt-5 text-muted-foreground">
+              A 3-hour hands-on session taking you from microcontroller basics
+              to a cloud-connected IoT prototype. Certificate included.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-md bg-primary/15 px-3 py-1.5 text-primary">3 Hours</span><span
+                class="rounded-md bg-primary/15 px-3 py-1.5 text-primary">Hands-on Training</span><span
+                class="rounded-md bg-primary/15 px-3 py-1.5 text-primary">Certificate</span>
+            </div>
+          </div>
+          <div class="md:col-span-3">
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">01</div>
+                <div class="mt-1 text-sm">Embedded Systems Basics</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">02</div>
+                <div class="mt-1 text-sm">Microcontrollers</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">03</div>
+                <div class="mt-1 text-sm">ESP32 Programming</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">04</div>
+                <div class="mt-1 text-sm">Sensor Interfacing</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">05</div>
+                <div class="mt-1 text-sm">Wireless Communication</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">06</div>
+                <div class="mt-1 text-sm">Cloud Computing</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">07</div>
+                <div class="mt-1 text-sm">ThingSpeak &amp; MQTT</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">08</div>
+                <div class="mt-1 text-sm">Home Automation</div>
+              </div>
+              <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
+                <div class="font-display text-xl text-primary">09</div>
+                <div class="mt-1 text-sm">Industrial IoT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="border-y border-border bg-card/30">
+      <div class="mx-auto max-w-7xl px-6 py-24">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+            Non-Technical Events
+          </div>
+          <h2 class="text-3xl font-semibold sm:text-5xl">
+            Break the code — for a bit
+          </h2>
+          <p class="mt-4 text-muted-foreground">
+            Games, quizzes and creative contests running in parallel through
+            the day.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div
+            class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+            <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-mic h-5 w-5" aria-hidden="true">
+                <path d="M12 19v3"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <rect x="9" y="2" width="6" height="13" rx="3"></rect>
+              </svg>
+            </div>
+            <span class="text-sm font-medium">IPL Auction</span>
+          </div>
+          <div
+            class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+            <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-palette h-5 w-5" aria-hidden="true">
+                <path
+                  d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
+                </path>
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <span class="text-sm font-medium">Art Strike</span>
+          </div>
+          <div
+            class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+            <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-search h-5 w-5" aria-hidden="true">
+                <path d="m21 21-4.34-4.34"></path>
+                <circle cx="11" cy="11" r="8"></circle>
+              </svg>
+            </div>
+            <span class="text-sm font-medium">Google It</span>
+          </div>
+          <div
+            class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+            <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-music h-5 w-5" aria-hidden="true">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <span class="text-sm font-medium">Sonic Guess</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="schedule" class="mx-auto max-w-7xl px-6 py-24">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+          Schedule
+        </div>
+        <h2 class="text-3xl font-semibold sm:text-5xl">
+          A single high-intensity day
+        </h2>
+        <p class="mt-4 text-muted-foreground">
+          Wednesday, 05 August 2026 — from registration at 9:00 AM to prize
+          distribution at 4:30 PM.
+        </p>
+      </div>
+      <div class="mx-auto max-w-3xl">
+        <ol class="relative border-l border-border pl-6">
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">9:00 AM</div>
+              <div class="text-sm text-foreground">
+                Registration &amp; Kit Collection
+              </div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">9:30 AM</div>
+              <div class="text-sm text-foreground">Inauguration Ceremony</div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">10:00 AM</div>
+              <div class="text-sm text-foreground">
+                Technical Events — Round 1
+              </div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">11:30 AM</div>
+              <div class="text-sm text-foreground">
+                Embedded Systems + IoT Workshop
+              </div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">1:00 PM</div>
+              <div class="text-sm text-foreground">Lunch Break</div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">2:00 PM</div>
+              <div class="text-sm text-foreground">
+                Project Expo — Project Vault
+              </div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">2:00 PM</div>
+              <div class="text-sm text-foreground">Non-Technical Events</div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">4:00 PM</div>
+              <div class="text-sm text-foreground">Valedictory Address</div>
+            </div>
+          </li>
+          <li class="mb-6 last:mb-0">
+            <span
+              class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
+            <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
+              <div class="font-display text-2xl text-primary">4:00 PM</div>
+              <div class="text-sm text-foreground">Prize Distribution</div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section id="register" class="mx-auto max-w-7xl px-6 py-24">
+      <div
+        class="grid gap-8 rounded-3xl border border-primary bg-[image:var(--gradient-hero)] p-8 md:grid-cols-2 md:p-14">
         <div>
           <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-            Theme
+            Registration
           </div>
-          <h2 class="font-display text-5xl leading-none sm:text-7xl">
-            Engineering <br /><span class="text-gradient">Tomorrow</span><br />Through Innovation
+          <h2 class="text-4xl font-semibold sm:text-5xl">
+            One fee. Everything included.
           </h2>
-          <p class="mt-6 max-w-md text-muted-foreground">
-            SYMPTRON&#x27;26 spotlights the emerging technologies
-            transforming industries and society — encouraging bold ideas,
-            working prototypes and cross-disciplinary collaboration.
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="font-display text-7xl text-gradient">₹200</span><span class="text-muted-foreground">/
+              person</span>
+          </div>
+          <p class="mt-4 text-sm text-muted-foreground">
+            Registration deadline:
+            <span class="text-foreground">02 August 2026</span>. On-spot
+            registration available for TN students subject to seat
+            availability. Paper/Poster submission deadline: 03 August 2026.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
+              Online
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg></a><a href="mailto:mecsymtron@gmail.com"
+              class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-mail h-4 w-4" aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              </svg>
+              Email us</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-border bg-background/60 p-6 backdrop-blur">
+          <div class="text-sm font-semibold uppercase tracking-widest text-primary">
+            Fee includes
+          </div>
+          <ul class="mt-4 grid grid-cols-2 gap-3">
+            <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+              <!-- -->Lunch &amp; Refreshments
+            </li>
+            <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+              <!-- -->Workshop Access
+            </li>
+            <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+              <!-- -->Event Participation
+            </li>
+            <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+              <!-- -->Certificates
+            </li>
+            <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+              <!-- -->Event Kit
+            </li>
+            <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+              <!-- -->Networking
+            </li>
+          </ul>
+          <div class="mt-6 rounded-lg border border-primary/30 bg-primary/10 p-4 text-xs text-muted-foreground">
+            Outstation participants — contact the organizing committee for
+            accommodation guidance. Nearby hotels and transport details
+            available on request.
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="border-y border-border bg-card/30">
+      <div class="mx-auto max-w-7xl px-6 py-24">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+            Committee
+          </div>
+          <h2 class="text-3xl font-semibold sm:text-5xl">
+            Meet the minds powering SYMPTRON&#x27;26
+          </h2>
+          <p class="mt-4 text-muted-foreground">
+            A passionate team of faculty mentors and student leaders united to
+            deliver a seamless, high-energy national symposium experience.
           </p>
         </div>
-        <div class="flex flex-wrap gap-3">
-          <span class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Artificial
-            Intelligence</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Embedded
-            Systems</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Internet of
-            Things</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Robotics</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">VLSI
-            Design</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Semiconductor
-            Tech</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Communication
-            Systems</span><span
-            class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Renewable
-            Energy</span><span class="rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground">Smart
-            Automation</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="mx-auto max-w-7xl px-6 py-24">
-    <div class="mx-auto mb-14 max-w-2xl text-center">
-      <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-        Why Join
-      </div>
-      <h2 class="text-3xl font-semibold sm:text-5xl">
-        Twelve reasons to be at SYMPTRON&#x27;26
-      </h2>
-    </div>
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">01</span><span class="text-sm">National-Level
-          Recognition</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">02</span><span class="text-sm">Cash Awards &amp; Prizes</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">03</span><span class="text-sm">Industry Exposure</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">04</span><span class="text-sm">IEEE Environment</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">05</span><span class="text-sm">Hands-on IoT Workshop</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">06</span><span class="text-sm">Research Presentation</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">07</span><span class="text-sm">Networking Opportunities</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">08</span><span class="text-sm">Skill Development</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">09</span><span class="text-sm">Placement Opportunities</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">10</span><span class="text-sm">Innovation Showcase</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">11</span><span class="text-sm">Participation
-          Certificate</span>
-      </div>
-      <div class="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-3">
-        <span class="font-display text-lg text-primary">12</span><span class="text-sm">Fun Non-Technical Events</span>
-      </div>
-    </div>
-  </section>
-  <section id="events" class="border-y border-border bg-card/30">
-    <div class="mx-auto max-w-7xl px-6 py-24">
-      <div class="mx-auto mb-14 max-w-2xl text-center">
-        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-          Technical Events
-        </div>
-        <h2 class="text-3xl font-semibold sm:text-5xl">
-          Four flagship contests
-        </h2>
-        <p class="mt-4 text-muted-foreground">
-          Compete across research, projects, code and design — pick one or
-          stack them all.
-        </p>
-      </div>
-      <div class="grid gap-5 md:grid-cols-2">
-        <article
-          class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
-          <div class="flex items-start justify-between gap-4">
-            <div
-              class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-file-text h-6 w-6" aria-hidden="true">
-                <path
-                  d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z">
-                </path>
-                <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
-                <path d="M10 9H8"></path>
-                <path d="M16 13H8"></path>
-                <path d="M16 17H8"></path>
-              </svg>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-primary">Paper Presentation</span>
-          </div>
-          <h3 class="mt-5 font-display text-3xl tracking-wider">
-            Paper Clash
-          </h3>
-          <p class="mt-2 text-sm text-muted-foreground">
-            Present original research on AI, Embedded, IoT, VLSI, Robotics,
-            Semiconductors, Communication &amp; Renewable Energy.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
-              1–2</span><span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">8
-              min talk</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">2 min
-              Q&amp;A</span>
-          </div>
-        </article>
-        <article
-          class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
-          <div class="flex items-start justify-between gap-4">
-            <div
-              class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-folder-open h-6 w-6" aria-hidden="true">
-                <path
-                  d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2">
-                </path>
-              </svg>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-primary">Project Expo</span>
-          </div>
-          <h3 class="mt-5 font-display text-3xl tracking-wider">
-            Project Vault
-          </h3>
-          <p class="mt-2 text-sm text-muted-foreground">
-            Showcase working hardware or software innovations. Judged on
-            innovation, implementation, presentation and social impact.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
-              1–3</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Hardware /
-              Software</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Live demo</span>
-          </div>
-        </article>
-        <article
-          class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
-          <div class="flex items-start justify-between gap-4">
-            <div
-              class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-code-xml h-6 w-6" aria-hidden="true">
-                <path d="m18 16 4-4-4-4"></path>
-                <path d="m6 8-4 4 4 4"></path>
-                <path d="m14.5 4-5 16"></path>
-              </svg>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-primary">Programming</span>
-          </div>
-          <h3 class="mt-5 font-display text-3xl tracking-wider">
-            Code Golf
-          </h3>
-          <p class="mt-2 text-sm text-muted-foreground">
-            Four intense rounds — aptitude, coding, debugging and a final
-            challenge. Languages: C, C++, Python, Java.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Individual</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">3
-              rounds</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Elimination</span>
-          </div>
-        </article>
-        <article
-          class="group relative overflow-hidden rounded-2xl border border-border bg-background p-6 transition hover:border-primary/60">
-          <div class="flex items-start justify-between gap-4">
-            <div
-              class="grid h-12 w-12 place-items-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-bot h-6 w-6" aria-hidden="true">
-                <path d="M12 8V4H8"></path>
-                <rect width="16" height="12" x="4" y="8" rx="2"></rect>
-                <path d="M2 14h2"></path>
-                <path d="M20 14h2"></path>
-                <path d="M15 13v2"></path>
-                <path d="M9 13v2"></path>
-              </svg>
-            </div>
-            <span class="text-[10px] uppercase tracking-widest text-primary">Design &amp; Simulation</span>
-          </div>
-          <h3 class="mt-5 font-display text-3xl tracking-wider">
-            Robo-CAD
-          </h3>
-          <p class="mt-2 text-sm text-muted-foreground">
-            Design electronic systems end-to-end — circuit design, PCB
-            layout, simulation and optimization using industry tools.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-2">
-            <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
-              1–2</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Simulation</span><span
-              class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">PCB layout</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section id="workshop" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="relative overflow-hidden rounded-3xl border border-border bg-card">
-      <div class="absolute inset-0 opacity-40" style="background: var(--gradient-hero)" aria-hidden="true"></div>
-      <div class="relative grid gap-10 p-8 md:grid-cols-5 md:p-14">
-        <div class="md:col-span-2">
+        <div class="mb-10 grid gap-6 sm:grid-cols-3">
           <div
-            class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] uppercase tracking-widest text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-wrench h-3 w-3" aria-hidden="true">
-              <path
-                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z">
-              </path>
-            </svg>
-            Hands-on Workshop
+            class="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition hover:border-primary/50">
+            <div class="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-sparkles h-5 w-5" aria-hidden="true">
+                <path
+                  d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                </path>
+                <path d="M20 2v4"></path>
+                <path d="M22 4h-4"></path>
+                <circle cx="4" cy="20" r="2"></circle>
+              </svg>
+            </div>
+            <h4 class="font-semibold">Vision-Driven Leadership</h4>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Faculty coordinators guide every strategic decision to ensure
+              academic quality and professional standards.
+            </p>
           </div>
-          <h2 class="font-display text-5xl leading-none sm:text-6xl">
-            Embedded Systems <br /><span class="text-gradient">with IoT</span>
+          <div
+            class="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition hover:border-primary/50">
+            <div class="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-sparkles h-5 w-5" aria-hidden="true">
+                <path
+                  d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                </path>
+                <path d="M20 2v4"></path>
+                <path d="M22 4h-4"></path>
+                <circle cx="4" cy="20" r="2"></circle>
+              </svg>
+            </div>
+            <h4 class="font-semibold">Student-Led Execution</h4>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+              ECE student volunteers manage events, logistics, hospitality and
+              technical operations from start to finish.
+            </p>
+          </div>
+          <div
+            class="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition hover:border-primary/50">
+            <div class="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-sparkles h-5 w-5" aria-hidden="true">
+                <path
+                  d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                </path>
+                <path d="M20 2v4"></path>
+                <path d="M22 4h-4"></path>
+                <circle cx="4" cy="20" r="2"></circle>
+              </svg>
+            </div>
+            <h4 class="font-semibold">Round-the-Clock Support</h4>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Reach out anytime before or during the symposium for
+              registration help, event queries or campus guidance.
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-border bg-background p-6">
+            <div class="text-xs uppercase tracking-widest text-primary">
+              Faculty Coordinators
+            </div>
+            <ul class="mt-4 space-y-3">
+              <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
+                <span class="font-medium">Mr. S. Bhoopalan</span><span class="text-xs text-muted-foreground">AP /
+                  ECE</span>
+              </li>
+              <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
+                <span class="font-medium">Ms. P. Venkateshwari</span><span class="text-xs text-muted-foreground">AP /
+                  ECE</span>
+              </li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-border bg-background p-6">
+            <div class="text-xs uppercase tracking-widest text-primary">
+              Student Coordinators
+            </div>
+            <ul class="mt-4 space-y-3">
+              <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
+                <span class="font-medium">Nithin S</span><a href="tel:9360430636"
+                  class="text-xs text-primary hover:underline">93604 30636</a>
+              </li>
+              <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
+                <span class="font-medium">Sharvesh S</span><a href="tel:9360465143"
+                  class="text-xs text-primary hover:underline">93604 65143</a>
+              </li>
+              <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
+                <span class="font-medium">Dheenadhayalan M</span><a href="tel:6379120103"
+                  class="text-xs text-primary hover:underline">63791 20103</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mx-auto max-w-7xl px-6 py-24">
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+          Partners
+        </div>
+        <h2 class="text-3xl font-semibold sm:text-5xl">
+          Backed by leading academic societies
+        </h2>
+        <p class="mt-4 text-muted-foreground">
+          SYMPTRON&#x27;26 is proudly associated with the following
+          professional bodies.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div
+          class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
+          IEEE
+        </div>
+        <div
+          class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
+          IETE
+        </div>
+        <div
+          class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
+          Institution&#x27;s Innovation Council
+        </div>
+        <div
+          class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
+          IEEE Electronics Packaging Society
+        </div>
+        <div
+          class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
+          Product Safety Engineering Society
+        </div>
+        <div
+          class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
+          ISTE
+        </div>
+      </div>
+    </section>
+    <section class="border-y border-border bg-card/30">
+      <div class="mx-auto max-w-4xl px-6 py-24">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
+            FAQ
+          </div>
+          <h2 class="text-3xl font-semibold sm:text-5xl">
+            Frequently asked questions
           </h2>
-          <p class="mt-5 text-muted-foreground">
-            A 3-hour hands-on session taking you from microcontroller basics
-            to a cloud-connected IoT prototype. Certificate included.
-          </p>
-          <div class="mt-6 flex flex-wrap gap-2 text-xs">
-            <span class="rounded-md bg-primary/15 px-3 py-1.5 text-primary">3 Hours</span><span
-              class="rounded-md bg-primary/15 px-3 py-1.5 text-primary">Hands-on Training</span><span
-              class="rounded-md bg-primary/15 px-3 py-1.5 text-primary">Certificate</span>
-          </div>
         </div>
-        <div class="md:col-span-3">
-          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">01</div>
-              <div class="mt-1 text-sm">Embedded Systems Basics</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">02</div>
-              <div class="mt-1 text-sm">Microcontrollers</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">03</div>
-              <div class="mt-1 text-sm">ESP32 Programming</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">04</div>
-              <div class="mt-1 text-sm">Sensor Interfacing</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">05</div>
-              <div class="mt-1 text-sm">Wireless Communication</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">06</div>
-              <div class="mt-1 text-sm">Cloud Computing</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">07</div>
-              <div class="mt-1 text-sm">ThingSpeak &amp; MQTT</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">08</div>
-              <div class="mt-1 text-sm">Home Automation</div>
-            </div>
-            <div class="rounded-lg border border-border bg-background/60 p-4 backdrop-blur">
-              <div class="font-display text-xl text-primary">09</div>
-              <div class="mt-1 text-sm">Industrial IoT</div>
-            </div>
-          </div>
+        <div class="space-y-3">
+          <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
+              Who can participate?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
+                aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground">
+              Engineering, Polytechnic and Science students from any
+              institution.
+            </p>
+          </details>
+          <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
+              Can I register for multiple events?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
+                aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground">
+              Yes, based on the schedule and availability.
+            </p>
+          </details>
+          <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
+              Will certificates be provided?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
+                aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground">
+              Yes — all registered participants receive certificates.
+            </p>
+          </details>
+          <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
+              Is accommodation available?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
+                aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground">
+              Contact the organizing committee for guidance and nearby hotel
+              options.
+            </p>
+          </details>
+          <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
+              Can I register on the event day?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
+                aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground">
+              Yes, spot registration is available subject to seat availability
+              (TN students).
+            </p>
+          </details>
+          <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
+            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
+              Is the registration fee refundable?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
+                aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground">
+              No, the ₹200 registration fee is non-refundable.
+            </p>
+          </details>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="border-y border-border bg-card/30">
-    <div class="mx-auto max-w-7xl px-6 py-24">
+    </section>
+    <section id="contact" class="mx-auto max-w-7xl px-6 py-24">
       <div class="mx-auto mb-14 max-w-2xl text-center">
         <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-          Non-Technical Events
+          Contact
         </div>
-        <h2 class="text-3xl font-semibold sm:text-5xl">
-          Break the code — for a bit
-        </h2>
-        <p class="mt-4 text-muted-foreground">
-          Games, quizzes and creative contests running in parallel through
-          the day.
-        </p>
+        <h2 class="text-3xl font-semibold sm:text-5xl">Get in touch</h2>
       </div>
-      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div
-          class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
-          <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-mic h-5 w-5" aria-hidden="true">
-              <path d="M12 19v3"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <rect x="9" y="2" width="6" height="13" rx="3"></rect>
-            </svg>
+      <div class="grid gap-6 lg:grid-cols-3">
+        <div class="rounded-2xl border border-border bg-card p-8">
+          <h3 class="text-lg font-semibold">Department of ECE</h3>
+          <p class="mt-2 text-sm text-muted-foreground">
+            Muthayammal Engineering College (Autonomous)<br />Rasipuram – 637
+            408<br />Namakkal District, Tamil Nadu, India
+          </p>
+          <div class="mt-6 space-y-3 text-sm">
+            <a href="mailto:mecsymtron@gmail.com"
+              class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-mail h-4 w-4 text-primary" aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              </svg>
+              mecsymtron@gmail.com</a><a href="https://instagram.com/symtron_mec"
+              class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-instagram h-4 w-4 text-primary" aria-hidden="true">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+              @symtron_mec</a><a href="#"
+              class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-facebook h-4 w-4 text-primary" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              SYMPTRON MEC</a><a href="tel:+919360430636"
+              class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-phone h-4 w-4 text-primary" aria-hidden="true">
+                <path
+                  d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                </path>
+              </svg>
+              +91 93604 30636</a>
           </div>
-          <span class="text-sm font-medium">IPL Auction</span>
         </div>
-        <div
-          class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
-          <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-palette h-5 w-5" aria-hidden="true">
-              <path
-                d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
-              </path>
-              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
-              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
-              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
-              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
-            </svg>
+        <div class="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+          <div class="flex-1">
+            <iframe title="Muthayammal Engineering College location"
+              src="https://maps.google.com/maps?q=Muthayammal+Engineering+College,Rasipuram,Namakkal,Tamil+Nadu&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              width="100%" height="100%" style="border: 0; min-height: 280px" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-          <span class="text-sm font-medium">Art Strike</span>
-        </div>
-        <div
-          class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
-          <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-search h-5 w-5" aria-hidden="true">
-              <path d="m21 21-4.34-4.34"></path>
-              <circle cx="11" cy="11" r="8"></circle>
-            </svg>
+          <div class="border-t border-border bg-background p-4">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Muthayammal+Engineering+College,Rasipuram,Namakkal,Tamil+Nadu"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/50 hover:text-primary"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-map-pin h-4 w-4" aria-hidden="true">
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                </path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Get directions on Google Maps</a>
           </div>
-          <span class="text-sm font-medium">Google It</span>
         </div>
-        <div
-          class="flex items-center gap-3 rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
-          <div class="grid h-10 w-10 place-items-center rounded-md bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-music h-5 w-5" aria-hidden="true">
-              <path d="M9 18V5l12-2v13"></path>
-              <circle cx="6" cy="18" r="3"></circle>
-              <circle cx="18" cy="16" r="3"></circle>
-            </svg>
+        <form class="rounded-2xl border border-border bg-card p-8">
+          <h3 class="text-lg font-semibold">Send us a message</h3>
+          <div class="mt-6 grid gap-4">
+            <input type="text" placeholder="Your name"
+              class="rounded-md border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary" /><input
+              type="email" placeholder="you@college.edu"
+              class="rounded-md border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary" /><textarea
+              rows="4" placeholder="Your message"
+              class="rounded-md border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"></textarea><button
+              type="submit"
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
           </div>
-          <span class="text-sm font-medium">Sonic Guess</span>
-        </div>
+        </form>
       </div>
-    </div>
-  </section>
-  <section id="schedule" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="mx-auto mb-14 max-w-2xl text-center">
-      <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-        Schedule
-      </div>
-      <h2 class="text-3xl font-semibold sm:text-5xl">
-        A single high-intensity day
-      </h2>
-      <p class="mt-4 text-muted-foreground">
-        Wednesday, 05 August 2026 — from registration at 9:00 AM to prize
-        distribution at 4:30 PM.
-      </p>
-    </div>
-    <div class="mx-auto max-w-3xl">
-      <ol class="relative border-l border-border pl-6">
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">9:00 AM</div>
-            <div class="text-sm text-foreground">
-              Registration &amp; Kit Collection
+    </section>
+    <footer class="border-t border-border bg-card/50">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <div class="font-display text-3xl tracking-wider text-gradient">
+              SYMTRON&#x27;26
+            </div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
+              National Level Technical Symposium · 05 August 2026
             </div>
           </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">9:30 AM</div>
-            <div class="text-sm text-foreground">Inauguration Ceremony</div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">10:00 AM</div>
-            <div class="text-sm text-foreground">
-              Technical Events — Round 1
-            </div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">11:30 AM</div>
-            <div class="text-sm text-foreground">
-              Embedded Systems with IoT
-            </div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">1:00 PM</div>
-            <div class="text-sm text-foreground">Lunch Break</div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">2:00 PM</div>
-            <div class="text-sm text-foreground">
-              Project Expo — Project Vault
-            </div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">2:00 PM</div>
-            <div class="text-sm text-foreground">Non-Technical Events</div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">4:00 PM</div>
-            <div class="text-sm text-foreground">Valedictory Address</div>
-          </div>
-        </li>
-        <li class="mb-6 last:mb-0">
-          <span
-            class="absolute -left-[7px] mt-2 grid h-3.5 w-3.5 place-items-center rounded-full bg-[image:var(--gradient-primary)] shadow-[var(--shadow-glow)]"></span>
-          <div class="flex items-baseline gap-4 rounded-lg border border-border bg-card px-5 py-4">
-            <div class="font-display text-2xl text-primary">4:00 PM</div>
-            <div class="text-sm text-foreground">Prize Distribution</div>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-  <section id="register" class="mx-auto max-w-7xl px-6 py-24">
-    <div
-      class="grid gap-8 rounded-3xl border border-primary bg-[image:var(--gradient-hero)] p-8 md:grid-cols-2 md:p-14">
-      <div>
-        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-          Registration
-        </div>
-        <h2 class="text-4xl font-semibold sm:text-5xl">
-          One fee. Everything included.
-        </h2>
-        <div class="mt-8 flex items-baseline gap-2">
-          <span class="font-display text-7xl text-gradient">₹200</span><span class="text-muted-foreground">/
-            person</span>
-        </div>
-        <p class="mt-4 text-sm text-muted-foreground">
-          Registration deadline:
-          <span class="text-foreground">02 August 2026</span>. On-spot
-          registration available for TN students subject to seat
-          availability. Paper/Poster submission deadline: 03 August 2026.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
-            target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
-            Online
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg></a><a href="mailto:mecsymtron@gmail.com"
-            class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-mail h-4 w-4" aria-hidden="true">
-              <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            </svg>
-            Email us</a>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-border bg-background/60 p-6 backdrop-blur">
-        <div class="text-sm font-semibold uppercase tracking-widest text-primary">
-          Fee includes
-        </div>
-        <ul class="mt-4 grid grid-cols-2 gap-3">
-          <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-            <!-- -->Lunch &amp; Refreshments
-          </li>
-          <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-            <!-- -->Workshop Access
-          </li>
-          <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-            <!-- -->Event Participation
-          </li>
-          <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-            <!-- -->Certificates
-          </li>
-          <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-            <!-- -->Event Kit
-          </li>
-          <li class="flex items-center gap-2 rounded-md border border-border bg-card px-3 py-2 text-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-3.5 w-3.5 text-primary" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-            <!-- -->Networking
-          </li>
-        </ul>
-        <div class="mt-6 rounded-lg border border-primary/30 bg-primary/10 p-4 text-xs text-muted-foreground">
-          Outstation participants — contact the organizing committee for
-          accommodation guidance. Nearby hotels and transport details
-          available on request.
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="border-y border-border bg-card/30">
-    <div class="mx-auto max-w-7xl px-6 py-24">
-      <div class="mx-auto mb-14 max-w-2xl text-center">
-        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-          Committee
-        </div>
-        <h2 class="text-3xl font-semibold sm:text-5xl">
-          Meet the minds powering SYMPTRON&#x27;26
-        </h2>
-        <p class="mt-4 text-muted-foreground">
-          A passionate team of faculty mentors and student leaders united to
-          deliver a seamless, high-energy national symposium experience.
-        </p>
-      </div>
-      <div class="mb-10 grid gap-6 sm:grid-cols-3">
-        <div
-          class="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition hover:border-primary/50">
-          <div class="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-sparkles h-5 w-5" aria-hidden="true">
-              <path
-                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
-              </path>
-              <path d="M20 2v4"></path>
-              <path d="M22 4h-4"></path>
-              <circle cx="4" cy="20" r="2"></circle>
-            </svg>
-          </div>
-          <h4 class="font-semibold">Vision-Driven Leadership</h4>
-          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Faculty coordinators guide every strategic decision to ensure
-            academic quality and professional standards.
-          </p>
-        </div>
-        <div
-          class="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition hover:border-primary/50">
-          <div class="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-sparkles h-5 w-5" aria-hidden="true">
-              <path
-                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
-              </path>
-              <path d="M20 2v4"></path>
-              <path d="M22 4h-4"></path>
-              <circle cx="4" cy="20" r="2"></circle>
-            </svg>
-          </div>
-          <h4 class="font-semibold">Student-Led Execution</h4>
-          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
-            ECE student volunteers manage events, logistics, hospitality and
-            technical operations from start to finish.
-          </p>
-        </div>
-        <div
-          class="rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-card)] transition hover:border-primary/50">
-          <div class="mx-auto mb-3 grid h-11 w-11 place-items-center rounded-full bg-primary/10 text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-sparkles h-5 w-5" aria-hidden="true">
-              <path
-                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
-              </path>
-              <path d="M20 2v4"></path>
-              <path d="M22 4h-4"></path>
-              <circle cx="4" cy="20" r="2"></circle>
-            </svg>
-          </div>
-          <h4 class="font-semibold">Round-the-Clock Support</h4>
-          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Reach out anytime before or during the symposium for
-            registration help, event queries or campus guidance.
-          </p>
-        </div>
-      </div>
-      <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-2xl border border-border bg-background p-6">
-          <div class="text-xs uppercase tracking-widest text-primary">
-            Faculty Coordinators
-          </div>
-          <ul class="mt-4 space-y-3">
-            <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
-              <span class="font-medium">Mr. S. Bhoopalan</span><span class="text-xs text-muted-foreground">AP /
-                ECE</span>
-            </li>
-            <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
-              <span class="font-medium">Ms. P. Venkateshwari</span><span class="text-xs text-muted-foreground">AP /
-                ECE</span>
-            </li>
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-border bg-background p-6">
-          <div class="text-xs uppercase tracking-widest text-primary">
-            Student Coordinators
-          </div>
-          <ul class="mt-4 space-y-3">
-            <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
-              <span class="font-medium">Nithin S</span><a href="tel:9360430636"
-                class="text-xs text-primary hover:underline">93604 30636</a>
-            </li>
-            <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
-              <span class="font-medium">Sharvesh S</span><a href="tel:9360465143"
-                class="text-xs text-primary hover:underline">93604 65143</a>
-            </li>
-            <li class="flex items-center justify-between rounded-lg border border-border px-4 py-3">
-              <span class="font-medium">Dheenadhayalan M</span><a href="tel:6379120103"
-                class="text-xs text-primary hover:underline">63791 20103</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="mx-auto max-w-7xl px-6 py-24">
-    <div class="mx-auto mb-14 max-w-2xl text-center">
-      <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-        Partners
-      </div>
-      <h2 class="text-3xl font-semibold sm:text-5xl">
-        Backed by leading academic societies
-      </h2>
-      <p class="mt-4 text-muted-foreground">
-        SYMPTRON&#x27;26 is proudly associated with the following
-        professional bodies.
-      </p>
-    </div>
-    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-      <div
-        class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
-        IEEE
-      </div>
-      <div
-        class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
-        IETE
-      </div>
-      <div
-        class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
-        Institution&#x27;s Innovation Council
-      </div>
-      <div
-        class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
-        IEEE Electronics Packaging Society
-      </div>
-      <div
-        class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
-        Product Safety Engineering Society
-      </div>
-      <div
-        class="grid h-24 place-items-center rounded-xl border border-border bg-card p-4 text-center text-sm font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground">
-        ISTE
-      </div>
-    </div>
-  </section>
-  <section class="border-y border-border bg-card/30">
-    <div class="mx-auto max-w-4xl px-6 py-24">
-      <div class="mx-auto mb-14 max-w-2xl text-center">
-        <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-          FAQ
-        </div>
-        <h2 class="text-3xl font-semibold sm:text-5xl">
-          Frequently asked questions
-        </h2>
-      </div>
-      <div class="space-y-3">
-        <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
-          <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
-            Who can participate?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
-              aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </summary>
-          <p class="mt-3 text-sm text-muted-foreground">
-            Engineering, Polytechnic and Science students from any
-            institution.
-          </p>
-        </details>
-        <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
-          <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
-            Can I register for multiple events?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
-              aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </summary>
-          <p class="mt-3 text-sm text-muted-foreground">
-            Yes, based on the schedule and availability.
-          </p>
-        </details>
-        <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
-          <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
-            Will certificates be provided?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
-              aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </summary>
-          <p class="mt-3 text-sm text-muted-foreground">
-            Yes — all registered participants receive certificates.
-          </p>
-        </details>
-        <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
-          <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
-            Is accommodation available?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
-              aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </summary>
-          <p class="mt-3 text-sm text-muted-foreground">
-            Contact the organizing committee for guidance and nearby hotel
-            options.
-          </p>
-        </details>
-        <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
-          <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
-            Can I register on the event day?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
-              aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </summary>
-          <p class="mt-3 text-sm text-muted-foreground">
-            Yes, spot registration is available subject to seat availability
-            (TN students).
-          </p>
-        </details>
-        <details class="group rounded-xl border border-border bg-background px-5 py-4 open:border-primary/50">
-          <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold">
-            Is the registration fee refundable?<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4 text-primary transition group-open:rotate-90"
-              aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </summary>
-          <p class="mt-3 text-sm text-muted-foreground">
-            No, the ₹200 registration fee is non-refundable.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="mx-auto max-w-7xl px-6 py-24">
-    <div class="mx-auto mb-14 max-w-2xl text-center">
-      <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
-        Contact
-      </div>
-      <h2 class="text-3xl font-semibold sm:text-5xl">Get in touch</h2>
-    </div>
-    <div class="grid gap-6 lg:grid-cols-3">
-      <div class="rounded-2xl border border-border bg-card p-8">
-        <h3 class="text-lg font-semibold">Department of ECE</h3>
-        <p class="mt-2 text-sm text-muted-foreground">
-          Muthayammal Engineering College (Autonomous)<br />Rasipuram – 637
-          408<br />Namakkal District, Tamil Nadu, India
-        </p>
-        <div class="mt-6 space-y-3 text-sm">
-          <a href="mailto:mecsymtron@gmail.com"
-            class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-mail h-4 w-4 text-primary" aria-hidden="true">
-              <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-            </svg>
-            mecsymtron@gmail.com</a><a href="https://instagram.com/symtron_mec"
-            class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-instagram h-4 w-4 text-primary" aria-hidden="true">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-            </svg>
-            @symtron_mec</a><a href="#"
-            class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-facebook h-4 w-4 text-primary" aria-hidden="true">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-            SYMPTRON MEC</a><a href="tel:+919360430636"
-            class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-phone h-4 w-4 text-primary" aria-hidden="true">
-              <path
-                d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
-              </path>
-            </svg>
-            +91 93604 30636</a>
-        </div>
-      </div>
-      <div class="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-        <div class="flex-1">
-          <iframe title="Muthayammal Engineering College location"
-            src="https://maps.google.com/maps?q=Muthayammal+Engineering+College,Rasipuram,Namakkal,Tamil+Nadu&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-            width="100%" height="100%" style="border: 0; min-height: 280px" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="border-t border-border bg-background p-4">
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Muthayammal+Engineering+College,Rasipuram,Namakkal,Tamil+Nadu"
-            target="_blank" rel="noopener noreferrer"
-            class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border bg-card px-4 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary/50 hover:text-primary"><svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-map-pin h-4 w-4" aria-hidden="true">
-              <path
-                d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
-              </path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            Get directions on Google Maps</a>
-        </div>
-      </div>
-      <form class="rounded-2xl border border-border bg-card p-8">
-        <h3 class="text-lg font-semibold">Send us a message</h3>
-        <div class="mt-6 grid gap-4">
-          <input type="text" placeholder="Your name"
-            class="rounded-md border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary" /><input
-            type="email" placeholder="you@college.edu"
-            class="rounded-md border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary" /><textarea
-            rows="4" placeholder="Your message"
-            class="rounded-md border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary"></textarea><button
-            type="submit"
-            class="inline-flex items-center justify-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">
-            Send Message
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
-  <footer class="border-t border-border bg-card/50">
-    <div class="mx-auto max-w-7xl px-6 py-12">
-      <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-        <div>
-          <div class="font-display text-3xl tracking-wider text-gradient">
-            SYMTRON&#x27;26
-          </div>
-          <div class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-            National Level Technical Symposium · 05 August 2026
+          <div class="flex gap-4 text-sm text-muted-foreground">
+            <a href="#about" class="hover:text-foreground">About</a><a href="#events"
+              class="hover:text-foreground">Events</a><a href="#workshop" class="hover:text-foreground">Workshop</a><a
+              href="#register" class="hover:text-foreground">Register</a><a href="#contact"
+              class="hover:text-foreground">Contact</a>
           </div>
         </div>
-        <div class="flex gap-4 text-sm text-muted-foreground">
-          <a href="#about" class="hover:text-foreground">About</a><a href="#events"
-            class="hover:text-foreground">Events</a><a href="#workshop" class="hover:text-foreground">Workshop</a><a
-            href="#register" class="hover:text-foreground">Register</a><a href="#contact"
-            class="hover:text-foreground">Contact</a>
+        <div class="mt-8 border-t border-border pt-6 text-xs text-muted-foreground">
+          © 2026 SYMTRON&#x27;26 · Department of Electronics and Communication
+          Engineering, Muthayammal Engineering College (Autonomous). All
+          rights reserved.
         </div>
       </div>
-      <div class="mt-8 border-t border-border pt-6 text-xs text-muted-foreground">
-        © 2026 SYMTRON&#x27;26 · Department of Electronics and Communication
-        Engineering, Muthayammal Engineering College (Autonomous). All
-        rights reserved.
-      </div>
-    </div>
-  </footer>
+    </footer>
   </div>
 </body>
 

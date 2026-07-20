@@ -100,32 +100,55 @@ function initApp() {
   // Mobile menu functionality
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
   const menuIcon = document.getElementById('menu-icon');
   const closeIcon = document.getElementById('close-icon');
 
-  if (mobileMenuBtn && mobileMenu && menuIcon && closeIcon) {
-    mobileMenuBtn.addEventListener('click', function () {
-      const isOpen = mobileMenu.classList.toggle('open');
-      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
-      
-      if (isOpen) {
+  if (mobileMenuBtn && mobileMenu) {
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      if (mobileMenuBackdrop) mobileMenuBackdrop.classList.add('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      if (menuIcon && closeIcon) {
         menuIcon.classList.add('hidden');
         closeIcon.classList.remove('hidden');
-      } else {
+      }
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      if (mobileMenuBackdrop) mobileMenuBackdrop.classList.remove('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (menuIcon && closeIcon) {
         menuIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
       }
+    }
+
+    mobileMenuBtn.addEventListener('click', function () {
+      const isOpen = mobileMenu.classList.contains('open');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
+
+    if (mobileMenuCloseBtn) {
+      mobileMenuCloseBtn.addEventListener('click', closeMenu);
+    }
+
+    if (mobileMenuBackdrop) {
+      mobileMenuBackdrop.addEventListener('click', closeMenu);
+    }
 
     // Close mobile menu when a navigation link is clicked
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     mobileLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        mobileMenu.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 }
