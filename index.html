@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SYMTRON'26 & SILIZIUM'26 | National Level Technical Symposium</title>
+  <title>SYMTRON'26 &amp; SILIZIUM'26 | National Level Technical Symposium</title>
   <meta name="description"
-    content="Symptron'26 - National Level Technical Symposium organized by Department of ECE, Muthayammal Engineering College." />
+    content="Symtron'26 &amp; Silizium'26 - National Level Technical Symposium organized by Department of ECE &amp; VLSI, Muthayammal Engineering College." />
   <!-- Tailwind CSS JIT compiler CDN -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script src="script.js"></script>
@@ -23,13 +23,13 @@
   <div class="min-h-screen bg-background text-foreground">
     <header class="sticky top-0 z-50 border-b bg-card/95 backdrop-blur-md"
       style="border-bottom: 1px solid oklch(28% 0.02 50 / 0.6)">
-      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <a href="#top" class="flex items-center gap-2">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <a href="#top" class="flex items-center gap-1.5 sm:gap-2 min-w-0">
           <div
-            class="grid h-9 w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+            class="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)] flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-cpu h-5 w-5" aria-hidden="true">
+              class="lucide lucide-cpu h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true">
               <path d="M12 20v2"></path>
               <path d="M12 2v2"></path>
               <path d="M17 20v2"></path>
@@ -46,12 +46,14 @@
               <rect x="8" y="8" width="8" height="8" rx="1"></rect>
             </svg>
           </div>
-          <div class="leading-tight">
-            <div class="font-display text-xl tracking-wider">
-              SYMPTRON&#x27;26
+          <div class="leading-tight min-w-0">
+            <div
+              class="font-display text-xs xs:text-sm sm:text-xl tracking-wider uppercase truncate max-w-[120px] xs:max-w-[170px] sm:max-w-none">
+              SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26
             </div>
-            <div class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-              MEC · ECE
+            <div
+              class="text-[7px] xs:text-[8px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.2em] text-muted-foreground">
+              MEC · ECE · VLSI
             </div>
           </div>
         </a>
@@ -63,30 +65,30 @@
             class="transition-colors hover:text-foreground">Register</a><a href="#contact"
             class="transition-colors hover:text-foreground">Contact</a>
         </nav>
-        <div class="flex items-center gap-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+        <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdi6KonR5q2EqZDW4eKVX91mo84TL6nu_dz9_Ax1jEVtI8KRQ/viewform"
             target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-1 rounded-md bg-[image:var(--gradient-primary)] px-3 py-1.5 text-xs font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110 sm:gap-1.5 sm:px-4 sm:py-2 sm:text-sm">Register
+            class="inline-flex items-center gap-1 rounded-md bg-[image:var(--gradient-primary)] px-2.5 py-1 text-[10px] xs:px-3 xs:py-1.5 xs:text-xs sm:px-4 sm:py-2 sm:text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
+              class="lucide lucide-chevron-right h-3.5 w-3.5 sm:h-4 sm:w-4 hidden xs:inline-block" aria-hidden="true">
               <path d="m9 18 6-6-6-6"></path>
             </svg></a>
 
           <!-- Mobile Menu Button -->
           <button id="mobile-menu-btn"
-            class="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-muted md:hidden"
+            class="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-muted md:hidden"
             aria-label="Toggle mobile menu" aria-expanded="false">
             <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="h-5 w-5 transition-transform duration-200">
+              class="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200">
               <line x1="4" x2="20" y1="12" y2="12"></line>
               <line x1="4" x2="20" y1="6" y2="6"></line>
               <line x1="4" x2="20" y1="18" y2="18"></line>
             </svg>
             <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="hidden h-5 w-5 transition-transform duration-200">
+              class="hidden h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200">
               <line x1="18" x2="6" y1="6" y2="18"></line>
               <line x1="6" x2="18" y1="6" y2="18"></line>
             </svg>
@@ -100,15 +102,17 @@
     <div id="mobile-menu-backdrop" class="fixed inset-0 z-[60] bg-background/80 backdrop-blur-sm md:hidden"></div>
 
     <!-- Mobile Navigation Sidebar -->
-    <div id="mobile-menu" class="fixed top-0 right-0 z-[70] h-full w-80 max-w-[calc(100vw-3rem)] translate-x-full bg-card border-l border-border/60 p-6 shadow-2xl transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
+    <div id="mobile-menu"
+      class="fixed top-0 right-0 z-[70] h-full w-80 max-w-[calc(100vw-3rem)] translate-x-full bg-card border-l border-border/60 p-6 shadow-2xl transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between">
       <div>
         <!-- Sidebar Header -->
         <div class="flex items-center justify-between mb-8 pb-4 border-b border-border/40">
-          <div class="flex items-center gap-2">
-            <div class="grid h-9 w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]">
+          <div class="flex items-center gap-2 min-w-0">
+            <div
+              class="grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-md bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)] flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-cpu h-5 w-5" aria-hidden="true">
+                class="lucide lucide-cpu h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true">
                 <path d="M12 20v2"></path>
                 <path d="M12 2v2"></path>
                 <path d="M17 20v2"></path>
@@ -125,22 +129,23 @@
                 <rect x="8" y="8" width="8" height="8" rx="1"></rect>
               </svg>
             </div>
-            <div class="leading-tight">
-              <div class="font-display text-xl tracking-wider">
-                SYMPTRON&#x27;26
+            <div class="leading-tight min-w-0">
+              <div class="font-display text-base sm:text-xl tracking-wider uppercase">
+                SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26
               </div>
-              <div class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                MEC · ECE
+              <div
+                class="text-[8px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-muted-foreground">
+                MEC · ECE · VLSI
               </div>
             </div>
           </div>
           <!-- Close Button -->
           <button id="mobile-menu-close"
-            class="flex h-9 w-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-muted"
+            class="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-md border border-border bg-card text-foreground transition-colors hover:bg-muted"
             aria-label="Close mobile menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="h-5 w-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="h-4 w-4 sm:h-5 sm:w-5">
               <line x1="18" x2="6" y1="6" y2="18"></line>
               <line x1="6" x2="18" y1="6" y2="18"></line>
             </svg>
@@ -208,7 +213,7 @@
 
       <!-- Sidebar Footer (Branding and Quick Actions) -->
       <div class="mt-auto pt-6 border-t border-border/40 flex flex-col gap-4">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdi6KonR5q2EqZDW4eKVX91mo84TL6nu_dz9_Ax1jEVtI8KRQ/viewform"
           target="_blank" rel="noopener noreferrer"
           class="mobile-nav-link flex items-center justify-center gap-1.5 rounded-md bg-[image:var(--gradient-primary)] px-4 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
           Now
@@ -227,50 +232,93 @@
       <div class="absolute inset-0 bg-grid opacity-60"></div>
       <div class="absolute inset-0" style="background: var(--gradient-hero)" aria-hidden="true"></div>
       <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
-        <div class="mx-auto max-w-4xl text-center">
-          <!-- College & Department Logos (Mobile only) -->
-          <div class="flex items-center justify-center gap-6 mb-6 md:hidden">
-            <img src="clg-logo.jpg" alt="College Logo" class="w-16 h-16 object-contain"
-              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
-            <img src="dep-logo.jpg" alt="Department Logo" class="w-16 h-16 object-contain"
-              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
-          </div>
+        <div class="mx-auto max-w-5xl text-center">
+          <!-- College & Department Logos and Info Banner (Responsive Layout) -->
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 mb-8 sm:mb-12 w-full">
 
-          <div
-            class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-sparkles h-3.5 w-3.5" aria-hidden="true">
-              <path
-                d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
-              </path>
-              <path d="M20 2v4"></path>
-              <path d="M22 4h-4"></path>
-              <circle cx="4" cy="20" r="2"></circle>
-            </svg>
-            National Level Technical Symposium
+            <!-- Mobile/Tablet Logo Header (Centered at the top, hidden on Desktop) -->
+            <div class="flex lg:hidden items-center justify-center gap-4 sm:gap-6 mb-6">
+              <!-- College Logo -->
+              <div class="bg-white p-1.5 sm:p-2 rounded-2xl shadow-md w-20 h-24 sm:w-24 sm:h-28 flex items-center justify-center transition-all"
+                style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));">
+                <img src="images and logos/clg-logo.jpg" alt="Muthayammal Engineering College Logo"
+                  class="w-full h-full object-contain rounded-lg" />
+              </div>
+              <!-- Department Logos stacked -->
+              <div class="flex flex-col gap-1.5 sm:gap-2">
+                <div class="bg-white p-1 rounded-full shadow-sm w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center transition-all"
+                  style="filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.08));">
+                  <img src="images and logos/ece dep logo.jpeg" alt="ECE Department Logo"
+                    class="w-full h-full object-contain rounded-full" />
+                </div>
+                <div class="bg-white p-1 rounded-full shadow-sm w-9 h-9 sm:w-12 sm:h-12 flex items-center justify-center transition-all"
+                  style="filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.08));">
+                  <img src="images and logos/vlsi dep logo cropped.jpeg" alt="VLSI Department Logo"
+                    class="w-full h-full object-contain rounded-full" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Left Side: College Logo (Desktop Only) -->
+            <div class="hidden lg:flex flex-shrink-0 justify-center">
+              <div
+                class="bg-white p-4 rounded-[1.5rem] shadow-[var(--shadow-card)] w-40 h-48 flex items-center justify-center transition-all duration-300 hover:scale-105"
+                style="filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.15));">
+                <img src="images and logos/clg-logo.jpg" alt="Muthayammal Engineering College Logo"
+                  class="w-full h-full object-contain rounded-lg" />
+              </div>
+            </div>
+
+            <!-- Middle: Wordings (Responsive and Large on Mobile) -->
+            <div class="flex-1 text-center flex flex-col items-center px-0 lg:px-4 min-w-0">
+              <h2
+                class="font-heading text-lg sm:text-2xl lg:text-3xl font-bold tracking-wider text-foreground uppercase leading-tight">
+                MUTHAYAMMAL ENGINEERING COLLEGE
+              </h2>
+              <p class="text-xs sm:text-sm font-semibold tracking-widest text-primary mt-1 uppercase">
+                (AUTONOMOUS)
+              </p>
+              <p class="text-[10px] sm:text-xs text-muted-foreground mt-1.5 tracking-wider uppercase font-medium">
+                RASIPURAM - 637 408, NAMAKKAL (DT), TAMIL NADU, INDIA
+              </p>
+
+              <div class="my-3 border-t border-border/30 w-1/4"></div>
+
+              <p
+                class="text-xs sm:text-sm md:text-base font-medium tracking-wide text-muted-foreground leading-normal sm:leading-relaxed max-w-2xl">
+                Department of Electronics and Communication Engineering and<br class="hidden sm:inline" />
+                Electronics Engineering (VLSI Design & Technology)
+              </p>
+
+              <p class="mt-3 text-[10px] sm:text-xs tracking-[0.25em] text-primary uppercase font-semibold">
+                PRESENTS
+              </p>
+
+              <!-- Main Title (Large on all viewports) -->
+              <h1
+                class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl mt-3 leading-[0.95] tracking-wide">
+                <span class="text-gradient">SYMTRON'26</span>
+                <span class="text-foreground">&amp;</span>
+                <span class="text-gradient">SILIZIUM'26</span>
+              </h1>
+            </div>
+
+            <!-- Right Side: Department Logos (Desktop Only) -->
+            <div class="hidden lg:flex flex-col items-center justify-center gap-4 flex-shrink-0">
+              <div
+                class="bg-white p-2 rounded-full shadow-[var(--shadow-card)] w-20 h-20 flex items-center justify-center transition-all duration-300 hover:scale-105"
+                style="filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));">
+                <img src="images and logos/ece dep logo.jpeg" alt="ECE Department Logo"
+                  class="w-full h-full object-contain rounded-full" />
+              </div>
+              <div
+                class="bg-white p-2 rounded-full shadow-[var(--shadow-card)] w-20 h-20 flex items-center justify-center transition-all duration-300 hover:scale-105"
+                style="filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));">
+                <img src="images and logos/vlsi dep logo cropped.jpeg" alt="VLSI Department Logo"
+                  class="w-full h-full object-contain rounded-full" />
+              </div>
+            </div>
           </div>
-          <div class="relative inline-block">
-            <!-- College Logo (Desktop/Tablet absolute) -->
-            <img src="clg-logo.jpg" alt="College Logo"
-              class="hidden md:block absolute left-[-5px] md:w-[70px] md:h-[70px] md:top-[-80px] lg:w-[80px] lg:h-[80px] lg:top-[-90px] object-contain"
-              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
-            <!-- Department Logo (Desktop/Tablet absolute) -->
-            <img src="dep-logo.jpg" alt="Department Logo"
-              class="hidden md:block absolute right-[-5px] md:w-[70px] md:h-[70px] md:top-[-80px] lg:w-[80px] lg:h-[80px] lg:top-[-90px] object-contain"
-              style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));" />
-            <h1 class="font-display text-6xl leading-[0.95] sm:text-8xl md:text-[10rem]">
-              <span class="text-gradient">SYMPTRON</span><span class="text-foreground">&#x27;26</span>
-            </h1>
-          </div>
-          <p class="mt-6 text-lg font-medium tracking-widest text-muted-foreground sm:text-xl">
-            INNOVATE · ENGINEER · INSPIRE
-          </p>
-          <p class="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
-            Department of Electronics and Communication Engineering ·
-            Muthayammal Engineering College (Autonomous), Rasipuram, Tamil
-            Nadu
-          </p>
           <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm">
             <div class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-1.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -343,7 +391,7 @@
             </div>
           </div>
           <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdi6KonR5q2EqZDW4eKVX91mo84TL6nu_dz9_Ax1jEVtI8KRQ/viewform"
               target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
               Now
@@ -353,8 +401,8 @@
                 <path d="m9 18 6-6-6-6"></path>
               </svg></a><a href="#events"
               class="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/50">View
-              Events</a><a href="#register"
-              class="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-sm font-semibold text-muted-foreground transition hover:text-foreground"><svg
+              Events</a><a href="images and logos/ECE brochure .jpeg" download="ECE_Brochure.jpeg"
+              class="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-5 py-3 text-sm font-semibold text-muted-foreground transition hover:text-foreground hover:border-primary/50"><svg
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-download h-4 w-4" aria-hidden="true">
@@ -362,17 +410,23 @@
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <path d="m7 10 5 5 5-5"></path>
               </svg>
-              Brochure</a>
+              ECE Brochure</a><a href="images and logos/EE-VLSI brochure .jpeg" download="EE-VLSI_Brochure.jpeg"
+              class="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-5 py-3 text-sm font-semibold text-muted-foreground transition hover:text-foreground hover:border-primary/50"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-download h-4 w-4" aria-hidden="true">
+                <path d="M12 15V3"></path>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <path d="m7 10 5 5 5-5"></path>
+              </svg>
+              VLSI Brochure</a>
           </div>
           <div
             class="mx-auto mt-12 flex max-w-md flex-col items-center gap-3 rounded-2xl border border-primary bg-background/70 p-5 backdrop-blur sm:flex-row sm:items-center sm:text-left">
-            <div class="rounded-lg bg-white p-2 shadow-[var(--shadow-glow)]">
-              <svg height="112" width="112" viewBox="0 0 45 45" role="img">
-                <path fill="#ffffff" d="M0,0 h45v45H0z" shape-rendering="crispEdges"></path>
-                <path fill="#0a0a0a"
-                  d="M0 0h7v1H0zM10 0h1v1H10zM12 0h3v1H12zM18 0h2v1H18zM21 0h1v1H21zM25 0h1v1H25zM27 0h7v1H27zM36 0h1v1H36zM38,0 h7v1H38zM0 1h1v1H0zM6 1h1v1H6zM11 1h1v1H11zM14 1h7v1H14zM22 1h4v1H22zM31 1h1v1H31zM35 1h1v1H35zM38 1h1v1H38zM44,1 h1v1H44zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h1v1H8zM10 2h2v1H10zM14 2h1v1H14zM17 2h1v1H17zM19 2h1v1H19zM23 2h1v1H23zM25 2h2v1H25zM29 2h2v1H29zM32 2h2v1H32zM35 2h1v1H35zM38 2h1v1H38zM40 2h3v1H40zM44,2 h1v1H44zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h3v1H8zM12 3h1v1H12zM15 3h2v1H15zM18 3h3v1H18zM23 3h1v1H23zM25 3h1v1H25zM30 3h2v1H30zM35 3h2v1H35zM38 3h1v1H38zM40 3h3v1H40zM44,3 h1v1H44zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h1v1H8zM12 4h1v1H12zM15 4h2v1H15zM19 4h7v1H19zM27 4h1v1H27zM30 4h2v1H30zM34 4h3v1H34zM38 4h1v1H38zM40 4h3v1H40zM44,4 h1v1H44zM0 5h1v1H0zM6 5h1v1H6zM8 5h3v1H8zM16 5h2v1H16zM20 5h1v1H20zM24 5h1v1H24zM26 5h4v1H26zM31 5h1v1H31zM38 5h1v1H38zM44,5 h1v1H44zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h1v1H26zM28 6h1v1H28zM30 6h1v1H30zM32 6h1v1H32zM34 6h1v1H34zM36 6h1v1H36zM38,6 h7v1H38zM8 7h3v1H8zM12 7h2v1H12zM15 7h2v1H15zM19 7h2v1H19zM24 7h7v1H24zM32 7h1v1H32zM35 7h2v1H35zM0 8h1v1H0zM2 8h5v1H2zM10 8h1v1H10zM16 8h2v1H16zM20 8h5v1H20zM26 8h2v1H26zM29 8h1v1H29zM31 8h1v1H31zM33 8h1v1H33zM38 8h5v1H38zM0 9h2v1H0zM10 9h1v1H10zM12 9h4v1H12zM18 9h3v1H18zM25 9h1v1H25zM29 9h4v1H29zM35 9h2v1H35zM40 9h2v1H40zM43,9 h2v1H43zM2 10h3v1H2zM6 10h2v1H6zM9 10h6v1H9zM18 10h2v1H18zM21 10h4v1H21zM26 10h1v1H26zM31 10h1v1H31zM33 10h7v1H33zM41 10h1v1H41zM43 10h1v1H43zM0 11h1v1H0zM2 11h2v1H2zM7 11h2v1H7zM10 11h1v1H10zM14 11h2v1H14zM17 11h1v1H17zM24 11h2v1H24zM27 11h2v1H27zM30 11h4v1H30zM36 11h2v1H36zM40 11h3v1H40zM2 12h5v1H2zM14 12h1v1H14zM18 12h2v1H18zM22 12h3v1H22zM26 12h2v1H26zM35 12h2v1H35zM38 12h1v1H38zM44,12 h1v1H44zM0 13h1v1H0zM4 13h2v1H4zM8 13h2v1H8zM11 13h2v1H11zM22 13h1v1H22zM25 13h1v1H25zM27 13h1v1H27zM29 13h2v1H29zM32 13h1v1H32zM35 13h3v1H35zM40 13h2v1H40zM44,13 h1v1H44zM1 14h1v1H1zM6 14h2v1H6zM9 14h2v1H9zM12 14h1v1H12zM14 14h1v1H14zM16 14h1v1H16zM18 14h1v1H18zM20 14h1v1H20zM22 14h3v1H22zM26 14h3v1H26zM31 14h1v1H31zM33 14h1v1H33zM36 14h1v1H36zM40 14h1v1H40zM42 14h2v1H42zM0 15h2v1H0zM3 15h3v1H3zM8 15h1v1H8zM12 15h1v1H12zM15 15h5v1H15zM25 15h1v1H25zM28 15h2v1H28zM32 15h1v1H32zM34 15h1v1H34zM36 15h4v1H36zM41 15h3v1H41zM1 16h4v1H1zM6 16h3v1H6zM11 16h2v1H11zM14 16h2v1H14zM17 16h2v1H17zM20 16h1v1H20zM22 16h5v1H22zM29 16h1v1H29zM31 16h1v1H31zM33 16h2v1H33zM38 16h1v1H38zM42 16h1v1H42zM44,16 h1v1H44zM5 17h1v1H5zM10 17h2v1H10zM14 17h1v1H14zM16 17h3v1H16zM20 17h1v1H20zM23 17h1v1H23zM25 17h1v1H25zM29 17h2v1H29zM32 17h1v1H32zM35 17h3v1H35zM39 17h1v1H39zM41 17h2v1H41zM2 18h6v1H2zM9 18h3v1H9zM13 18h1v1H13zM15 18h3v1H15zM19 18h7v1H19zM27 18h1v1H27zM31 18h3v1H31zM35 18h1v1H35zM37 18h2v1H37zM41 18h3v1H41zM2 19h1v1H2zM5 19h1v1H5zM8 19h1v1H8zM15 19h3v1H15zM19 19h1v1H19zM24 19h2v1H24zM29 19h5v1H29zM35 19h1v1H35zM39 19h1v1H39zM41 19h3v1H41zM0 20h2v1H0zM4 20h5v1H4zM10 20h1v1H10zM14 20h1v1H14zM16 20h10v1H16zM31 20h1v1H31zM34 20h8v1H34zM43 20h1v1H43zM0 21h1v1H0zM4 21h1v1H4zM8 21h1v1H8zM11 21h3v1H11zM15 21h3v1H15zM19 21h2v1H19zM24 21h2v1H24zM29 21h2v1H29zM35 21h2v1H35zM40 21h3v1H40zM44,21 h1v1H44zM4 22h1v1H4zM6 22h1v1H6zM8 22h2v1H8zM13 22h2v1H13zM16 22h1v1H16zM18 22h1v1H18zM20 22h1v1H20zM22 22h1v1H22zM24 22h1v1H24zM26 22h2v1H26zM34 22h3v1H34zM38 22h1v1H38zM40 22h1v1H40zM42 22h1v1H42zM0 23h5v1H0zM8 23h1v1H8zM10 23h1v1H10zM14 23h1v1H14zM17 23h2v1H17zM20 23h1v1H20zM24 23h1v1H24zM27 23h3v1H27zM34 23h1v1H34zM36 23h1v1H36zM40 23h3v1H40zM1 24h8v1H1zM10 24h1v1H10zM12 24h1v1H12zM14 24h3v1H14zM18 24h1v1H18zM20 24h7v1H20zM29 24h3v1H29zM34 24h8v1H34zM43 24h1v1H43zM0 25h1v1H0zM2 25h2v1H2zM9 25h1v1H9zM11 25h1v1H11zM17 25h7v1H17zM25 25h1v1H25zM27 25h1v1H27zM29 25h4v1H29zM35 25h1v1H35zM38 25h1v1H38zM41 25h2v1H41zM44,25 h1v1H44zM0 26h1v1H0zM3 26h1v1H3zM5 26h6v1H5zM12 26h2v1H12zM15 26h4v1H15zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM33 26h5v1H33zM41 26h3v1H41zM0 27h2v1H0zM3 27h2v1H3zM7 27h1v1H7zM9 27h1v1H9zM11 27h1v1H11zM13 27h1v1H13zM16 27h4v1H16zM24 27h2v1H24zM27 27h3v1H27zM31 27h2v1H31zM34 27h2v1H34zM38 27h2v1H38zM42 27h1v1H42zM44,27 h1v1H44zM0 28h1v1H0zM5 28h3v1H5zM11 28h1v1H11zM13 28h6v1H13zM23 28h2v1H23zM30 28h2v1H30zM33 28h1v1H33zM38 28h1v1H38zM40 28h1v1H40zM43 28h1v1H43zM1 29h5v1H1zM7 29h1v1H7zM9 29h2v1H9zM13 29h2v1H13zM20 29h1v1H20zM23 29h1v1H23zM25 29h1v1H25zM28 29h3v1H28zM35 29h1v1H35zM38 29h1v1H38zM44,29 h1v1H44zM1 30h1v1H1zM4 30h1v1H4zM6 30h2v1H6zM11 30h2v1H11zM14 30h1v1H14zM16 30h1v1H16zM19 30h1v1H19zM21 30h1v1H21zM23 30h1v1H23zM27 30h1v1H27zM31 30h1v1H31zM39 30h1v1H39zM43 30h1v1H43zM0 31h3v1H0zM9 31h5v1H9zM15 31h2v1H15zM19 31h2v1H19zM22 31h3v1H22zM26 31h2v1H26zM29 31h1v1H29zM32 31h1v1H32zM35 31h1v1H35zM38 31h2v1H38zM41 31h2v1H41zM44,31 h1v1H44zM3 32h1v1H3zM6 32h2v1H6zM12 32h3v1H12zM17 32h1v1H17zM19 32h1v1H19zM23 32h3v1H23zM29 32h1v1H29zM34 32h1v1H34zM39 32h2v1H39zM42 32h2v1H42zM0 33h2v1H0zM3 33h2v1H3zM7 33h2v1H7zM10 33h1v1H10zM12 33h3v1H12zM16 33h1v1H16zM18 33h5v1H18zM25 33h1v1H25zM27 33h6v1H27zM36 33h2v1H36zM41,33 h4v1H41zM4 34h1v1H4zM6 34h3v1H6zM11 34h2v1H11zM14 34h1v1H14zM17 34h2v1H17zM20 34h2v1H20zM23 34h2v1H23zM26 34h2v1H26zM35 34h3v1H35zM39 34h3v1H39zM1 35h4v1H1zM9 35h4v1H9zM19 35h1v1H19zM21 35h5v1H21zM30 35h4v1H30zM35 35h2v1H35zM41,35 h4v1H41zM0 36h1v1H0zM3 36h2v1H3zM6 36h1v1H6zM8 36h2v1H8zM12 36h1v1H12zM16 36h1v1H16zM18 36h1v1H18zM20 36h5v1H20zM29 36h3v1H29zM33 36h1v1H33zM36 36h5v1H36zM43,36 h2v1H43zM8 37h1v1H8zM11 37h1v1H11zM14 37h1v1H14zM16 37h2v1H16zM19 37h2v1H19zM24 37h2v1H24zM27 37h5v1H27zM33 37h1v1H33zM35 37h2v1H35zM40 37h3v1H40zM44,37 h1v1H44zM0 38h7v1H0zM10 38h3v1H10zM14 38h1v1H14zM17 38h2v1H17zM20 38h1v1H20zM22 38h1v1H22zM24 38h1v1H24zM26 38h3v1H26zM31 38h2v1H31zM34 38h3v1H34zM38 38h1v1H38zM40 38h1v1H40zM42 38h2v1H42zM0 39h1v1H0zM6 39h1v1H6zM8 39h1v1H8zM10 39h6v1H10zM18 39h3v1H18zM24 39h5v1H24zM30 39h2v1H30zM33 39h1v1H33zM35 39h2v1H35zM40,39 h5v1H40zM0 40h1v1H0zM2 40h3v1H2zM6 40h1v1H6zM8 40h1v1H8zM10 40h2v1H10zM13 40h2v1H13zM17 40h1v1H17zM20 40h7v1H20zM31 40h1v1H31zM34 40h8v1H34zM43,40 h2v1H43zM0 41h1v1H0zM2 41h3v1H2zM6 41h1v1H6zM8 41h1v1H8zM10 41h4v1H10zM21 41h1v1H21zM25 41h1v1H25zM28 41h4v1H28zM35 41h1v1H35zM37 41h1v1H37zM41 41h1v1H41zM43,41 h2v1H43zM0 42h1v1H0zM2 42h3v1H2zM6 42h1v1H6zM8 42h7v1H8zM16 42h2v1H16zM20 42h2v1H20zM26 42h1v1H26zM32 42h1v1H32zM34 42h1v1H34zM36 42h1v1H36zM41 42h1v1H41zM43 42h1v1H43zM0 43h1v1H0zM6 43h1v1H6zM9 43h1v1H9zM11 43h1v1H11zM14 43h4v1H14zM19 43h2v1H19zM22 43h1v1H22zM28 43h1v1H28zM32 43h2v1H32zM35 43h2v1H35zM39 43h2v1H39zM42 43h1v1H42zM0 44h7v1H0zM8 44h7v1H8zM17 44h1v1H17zM19 44h1v1H19zM22 44h3v1H22zM26 44h1v1H26zM29 44h3v1H29zM34 44h2v1H34zM37 44h3v1H37zM41 44h1v1H41zM43 44h1v1H43z"
-                  shape-rendering="crispEdges"></path>
-              </svg>
+            <div
+              class="rounded-xl bg-white p-2 shadow-[var(--shadow-glow)] flex items-center justify-center w-28 h-28 flex-shrink-0">
+              <img src="images and logos/qr registration cropped.jpeg" alt="QR Code Registration"
+                class="w-full h-full object-contain" />
             </div>
             <div class="text-center sm:text-left">
               <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary">
@@ -397,7 +451,7 @@
               <p class="mt-2 text-sm text-foreground">
                 Scan to open the Google registration form on your phone.
               </p>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdi6KonR5q2EqZDW4eKVX91mo84TL6nu_dz9_Ax1jEVtI8KRQ/viewform"
                 target="_blank" rel="noopener noreferrer"
                 class="mt-1 inline-block text-xs text-muted-foreground underline hover:text-foreground">Or tap here to
                 register</a>
@@ -523,7 +577,7 @@
           About
         </div>
         <h2 class="text-3xl font-semibold sm:text-5xl">
-          The institution &amp; department behind SYMPTRON&#x27;26
+          The institution &amp; department behind SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26
         </h2>
         <p class="mt-4 text-muted-foreground">
           Two decades of technical excellence, research leadership and
@@ -845,19 +899,208 @@
         </div>
       </div>
 
-      <!-- SYMPTRON Committee Section -->
+      <!-- EE-VLSI Department Section -->
+      <div class="mt-20 pt-20 border-t border-border/40 grid gap-10 lg:grid-cols-2">
+        <!-- Left Column: Vision & Mission (Card + Highlight Box) -->
+        <div class="order-2 lg:order-1">
+          <div
+            class="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-[var(--shadow-card)] transition hover:border-primary/50">
+            <div>
+              <div
+                class="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] uppercase tracking-widest text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"
+                  aria-hidden="true">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                Vision
+              </div>
+              <h4 class="font-display text-2xl sm:text-3xl leading-tight text-gradient mb-3">Our Vision</h4>
+              <p class="text-sm leading-relaxed text-muted-foreground">
+                To be a center of excellence in Electronics Engineering (VLSI Design and Technology) by fostering
+                innovation, research, and industry-ready professionals in semiconductor and integrated circuit
+                technologies.
+              </p>
+            </div>
+
+            <div class="border-t border-border/40 my-6"></div>
+
+            <div>
+              <div
+                class="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] uppercase tracking-widest text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"
+                  aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Mission
+              </div>
+              <h4 class="font-display text-2xl sm:text-3xl leading-tight text-gradient mb-4">Our Mission</h4>
+              <ul class="space-y-4">
+                <li class="flex gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-check-circle2 mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span class="text-xs sm:text-sm text-muted-foreground">Deliver quality education in VLSI design,
+                    semiconductor technology, and electronic system design.</span>
+                </li>
+                <li class="flex gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-check-circle2 mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span class="text-xs sm:text-sm text-muted-foreground">Promote research, innovation, and
+                    interdisciplinary learning.</span>
+                </li>
+                <li class="flex gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-check-circle2 mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span class="text-xs sm:text-sm text-muted-foreground">Strengthen industry collaboration through
+                    internships, workshops, and expert interactions.</span>
+                </li>
+                <li class="flex gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-check-circle2 mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span class="text-xs sm:text-sm text-muted-foreground">Develop competent engineers with professional
+                    ethics, leadership, and lifelong learning skills.</span>
+                </li>
+                <li class="flex gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-check-circle2 mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  <span class="text-xs sm:text-sm text-muted-foreground">Encourage entrepreneurship and technological
+                    solutions for societal needs.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6 rounded-xl border border-primary/30 bg-primary/10 p-4 text-sm text-muted-foreground">
+            Equipping graduates with a dynamic curriculum and practical skills to design next-generation microchips and
+            integrated semiconductor technologies.
+          </div>
+        </div>
+
+        <!-- Right Column: Description & Focus Cards -->
+        <div class="order-1 lg:order-2">
+          <div
+            class="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] uppercase tracking-widest text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-cpu h-3 w-3" aria-hidden="true">
+              <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+              <rect x="9" y="9" width="6" height="6" rx="1"></rect>
+              <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"></path>
+            </svg>
+            About the Department of EE-VLSI
+          </div>
+          <h3 class="font-display text-3xl leading-tight sm:text-4xl">
+            Department of Electronics Engineering (VLSI Design &amp; Technology)
+          </h3>
+          <p class="mt-4 leading-relaxed text-muted-foreground text-sm">
+            The Department of Electronics Engineering (VLSI Design and Technology) is committed to developing skilled
+            engineers in the field of semiconductor technology, integrated circuit (IC) design, embedded systems, and
+            advanced electronic systems. The department provides a strong foundation in analog and digital VLSI design,
+            CMOS technology, FPGA, ASIC, verification, and system-on-chip (SoC) design through a balanced curriculum,
+            modern laboratories, and industry-oriented learning.
+          </p>
+          <p class="mt-4 leading-relaxed text-muted-foreground text-sm">
+            Students are encouraged to participate in research, technical symposiums, workshops, internships, and
+            innovation projects that enhance their practical knowledge and problem-solving abilities. The department
+            strives to prepare graduates who can contribute to the rapidly evolving semiconductor and electronics
+            industry.
+          </p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+              <div class="mb-2 flex items-center gap-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-layers h-4 w-4" aria-hidden="true">
+                  <path d="m12 3-10 5 10 5 10-5-10-5Z"></path>
+                  <path d="m2 17 10 5 10-5"></path>
+                  <path d="m2 12 10 5 10-5"></path>
+                </svg><span class="text-sm font-semibold">IC &amp; System Design</span>
+              </div>
+              <p class="text-xs leading-relaxed text-muted-foreground">
+                In-depth expertise in analog and digital integrated circuit design using industry-standard EDA tools.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+              <div class="mb-2 flex items-center gap-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-binary h-4 w-4" aria-hidden="true">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M10 9H8v4h2M16 9h-2v4h2"></path>
+                </svg><span class="text-sm font-semibold">FPGA &amp; ASIC Verification</span>
+              </div>
+              <p class="text-xs leading-relaxed text-muted-foreground">
+                Comprehensive training on programmable logic arrays and ASIC verification methodologies.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+              <div class="mb-2 flex items-center gap-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-microchip h-4 w-4" aria-hidden="true">
+                  <path d="M18 6H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Z"></path>
+                  <path d="M9 12h6M12 9v6"></path>
+                </svg><span class="text-sm font-semibold">Semiconductor Tech</span>
+              </div>
+              <p class="text-xs leading-relaxed text-muted-foreground">
+                Hands-on learning of CMOS technology, design rules, and semiconductor physics.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-background p-4 transition hover:border-primary/50">
+              <div class="mb-2 flex items-center gap-2 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-circuit-board h-4 w-4" aria-hidden="true">
+                  <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                  <path d="M9 9h6v6H9z"></path>
+                  <path d="M12 3v6M12 15v6M3 12h6M15 12h6"></path>
+                </svg><span class="text-sm font-semibold">System-on-Chip (SoC)</span>
+              </div>
+              <p class="text-xs leading-relaxed text-muted-foreground">
+                Designing complex SoC architectures incorporating processor cores, memory, and interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYMTRON & SILIZIUM Committee Section -->
       <div class="mt-24">
         <div class="mx-auto mb-14 max-w-2xl text-center">
           <div class="mb-3 text-xs uppercase tracking-[0.3em] text-primary">
             The Team
           </div>
           <h2 class="text-3xl font-semibold sm:text-5xl">
-            About SYMPTRON Committee
+            About SYMTRON &amp; SILIZIUM Committee
           </h2>
           <p class="mt-4 leading-relaxed text-muted-foreground">
-            The SYMPTRON Committee is a dedicated team of faculty members and student coordinators from the Department
+            The SYMTRON &amp; SILIZIUM Committee is a dedicated team of faculty members and student coordinators from
+            the Department
             of Electronics and Communication Engineering, Muthayammal Engineering College (Autonomous). The committee is
-            responsible for planning, organizing, and executing SYMPTRON, the National Level Technical Symposium.
+            responsible for planning, organizing, and executing SYMTRON &amp; SILIZIUM, the National Level Technical
+            Symposium.
           </p>
           <p class="mt-4 leading-relaxed text-muted-foreground">
             With a commitment to professionalism, teamwork, and innovation, the committee ensures the successful conduct
@@ -883,7 +1126,8 @@
             </div>
             <h3 class="font-display text-3xl leading-tight sm:text-4xl">Our Vision</h3>
             <p class="mt-4 leading-relaxed text-muted-foreground">
-              To establish SYMPTRON as a premier National Level Technical Symposium that inspires innovation, promotes
+              To establish SYMTRON &amp; SILIZIUM as a premier National Level Technical Symposium that inspires
+              innovation, promotes
               technical excellence, and strengthens collaboration between students, academia, and industry.
             </p>
           </div>
@@ -1109,10 +1353,10 @@
           <!-- College Logo (left) -->
           <div class="flex flex-col items-center justify-center gap-3">
             <!-- <div
-              class="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)] transition hover:border-primary/50 flex flex-col items-center gap-2 max-w-[200px]">
-              <img src="clg-logo.jpg" alt="Muthayammal Engineering College Logo" class="h-32 w-32 object-contain" />
-              <p class="text-center text-[10px] uppercase tracking-widest text-muted-foreground leading-snug">
-                Muthayammal<br />Engineering College</p>-->
+               class="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)] transition hover:border-primary/50 flex flex-col items-center gap-2 max-w-[200px]">
+               <img src="images and logos/clg-logo.jpg" alt="Muthayammal Engineering College Logo" class="h-32 w-32 object-contain" />
+               <p class="text-center text-[10px] uppercase tracking-widest text-muted-foreground leading-snug">
+                 Muthayammal<br />Engineering College</p>-->
           </div>
         </div>
 
@@ -1125,19 +1369,20 @@
             <p class="font-display text-4xl leading-tight text-gradient sm:text-5xl">
               "Innovate. Collaborate. Excel."
             </p>
-            <p class="mt-4 text-sm text-muted-foreground">— SYMPTRON Committee, Dept. of ECE, MEC</p>
+            <p class="mt-4 text-sm text-muted-foreground">— SYMTRON &amp; SILIZIUM Committee, Dept. of ECE &amp; VLSI,
+              MEC</p>
           </div>
         </div>
 
         <!-- Department Logo (right) -->
         <div class="flex flex-col items-center justify-center gap-3">
           <!--- <div
-              class="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)] transition hover:border-primary/50 flex flex-col items-center gap-2 max-w-[200px]">
-              <img src="dep-logo.jpg" alt="Department of Electronics and Communication Engineering Logo"
-                class="h-32 w-32 object-contain" />
-              <p class="text-center text-[10px] uppercase tracking-widest text-muted-foreground leading-snug">Dept.
-                of<br />ECE, MEC</p>
-            </div>-->
+               class="rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-card)] transition hover:border-primary/50 flex flex-col items-center gap-2 max-w-[200px]">
+               <img src="images and logos/ece dep logo.jpeg" alt="Department of Electronics and Communication Engineering Logo"
+                 class="h-32 w-32 object-contain" />
+               <p class="text-center text-[10px] uppercase tracking-widest text-muted-foreground leading-snug">Dept.
+                 of<br />ECE, MEC</p>
+             </div>-->
         </div>
       </div>
 
@@ -1154,7 +1399,7 @@
               Engineering <br /><span class="text-gradient">Tomorrow</span><br />Through Innovation
             </h2>
             <p class="mt-6 max-w-md text-muted-foreground">
-              SYMPTRON&#x27;26 spotlights the emerging technologies
+              SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26 spotlight the emerging technologies
               transforming industries and society — encouraging bold ideas,
               working prototypes and cross-disciplinary collaboration.
             </p>
@@ -1187,7 +1432,7 @@
           Why Join
         </div>
         <h2 class="text-3xl font-semibold sm:text-5xl">
-          Twelve reasons to be at SYMPTRON&#x27;26
+          Twelve reasons to be at SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26
         </h2>
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -1304,7 +1549,7 @@
             </p>
             <div class="mt-5 flex flex-wrap gap-2">
               <span class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Team:
-                1–4</span><span
+                1–3</span><span
                 class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Hardware /
                 Software</span><span
                 class="rounded-full border border-border px-3 py-1 text-[11px] text-muted-foreground">Live demo</span>
@@ -1639,7 +1884,7 @@
             availability. Paper/Poster submission deadline: 03 August 2026.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdv46ajQXVdBlsUXSwA_5LJBTNt7anGYWGgmBbAvWYjVfscjg/viewform?usp=publish-editor"
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdi6KonR5q2EqZDW4eKVX91mo84TL6nu_dz9_Ax1jEVtI8KRQ/viewform"
               target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 rounded-md bg-[image:var(--gradient-primary)] px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition hover:brightness-110">Register
               Online
@@ -1727,7 +1972,7 @@
             Committee
           </div>
           <h2 class="text-3xl font-semibold sm:text-5xl">
-            Meet the minds powering SYMPTRON&#x27;26
+            Meet the minds powering SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26
           </h2>
           <p class="mt-4 text-muted-foreground">
             A passionate team of faculty mentors and student leaders united to
@@ -1843,7 +2088,7 @@
           Backed by leading academic societies
         </h2>
         <p class="mt-4 text-muted-foreground">
-          SYMPTRON&#x27;26 is proudly associated with the following
+          SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26 are proudly associated with the following
           professional bodies.
         </p>
       </div>
@@ -2013,7 +2258,7 @@
                 class="lucide lucide-facebook h-4 w-4 text-primary" aria-hidden="true">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
-              SYMPTRON MEC</a><a href="tel:+919360430636"
+              SYMTRON &amp; SILIZIUM MEC</a><a href="tel:+919360430636"
               class="flex items-center gap-3 text-muted-foreground transition hover:text-foreground"><svg
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -2074,7 +2319,7 @@
         <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
             <div class="font-display text-3xl tracking-wider text-gradient">
-              SYMTRON&#x27;26
+              SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26
             </div>
             <div class="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
               National Level Technical Symposium · 05 August 2026
@@ -2088,13 +2333,29 @@
           </div>
         </div>
         <div class="mt-8 border-t border-border pt-6 text-xs text-muted-foreground">
-          © 2026 SYMTRON&#x27;26 · Department of Electronics and Communication
-          Engineering, Muthayammal Engineering College (Autonomous). All
-          rights reserved.
+          © 2026 SYMTRON&#x27;26 &amp; SILIZIUM&#x27;26 · Department of Electronics and Communication Engineering &amp;
+          Department of Electronics Engineering (VLSI Design and Technology), Muthayammal Engineering College
+          (Autonomous). All rights reserved.
         </div>
       </div>
     </footer>
   </div>
+
+  <!-- Persistent WhatsApp floating sticky button -->
+  <a href="https://chat.whatsapp.com/IjyTLdKxzfJIZK7SOHhELT?s=cl&p=a&ilr=1" target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 z-[100] flex items-center justify-center h-14 w-14 rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/20 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40 group"
+    aria-label="Join WhatsApp Community">
+    <!-- Tooltip expands on hover on Desktop -->
+    <span
+      class="absolute right-16 bg-card text-foreground text-xs font-semibold px-3 py-1.5 rounded-lg border border-border shadow-md whitespace-nowrap opacity-0 scale-90 translate-x-2 transition-all duration-200 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0 hidden md:block">
+      Join WhatsApp Community
+    </span>
+    <!-- WhatsApp SVG Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6 w-6 fill-white">
+      <path
+        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+    </svg>
+  </a>
 </body>
 
 </html>
